@@ -9,7 +9,7 @@ import org.testng.Assert;
 import java.time.Duration;
 
 public class MyMethods {
-    public WebDriverWait wait= new WebDriverWait(BasicDriver.getDriver(), Duration.ofSeconds(10));
+    public WebDriverWait wait= new WebDriverWait(DriverClass.getDriver(), Duration.ofSeconds(10));
     public void sendKeysMethod(WebElement element, String keys){
         wait.until(ExpectedConditions.visibilityOf(element));
         scrollToElement(element);
@@ -24,7 +24,7 @@ public class MyMethods {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
     public void scrollToElement(WebElement element){
-        JavascriptExecutor js = (JavascriptExecutor) BasicDriver.getDriver();
+        JavascriptExecutor js = (JavascriptExecutor) DriverClass.getDriver();
         js.executeScript("arguments[0].scrollIntoView();",element);
 
     }

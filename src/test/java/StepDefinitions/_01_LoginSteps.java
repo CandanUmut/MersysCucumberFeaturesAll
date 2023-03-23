@@ -1,7 +1,7 @@
 package StepDefinitions;
 
 import Pages.DialogContent;
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import io.cucumber.java.en.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,19 +10,19 @@ import org.testng.Assert;
 import java.time.Duration;
 
 
-public class _01_LoginSteps extends BasicDriver {
+public class _01_LoginSteps extends DriverClass {
 
 
     DialogContent dialogContent = new DialogContent();
-    WebDriverWait wait = new WebDriverWait(BasicDriver.getDriver(), Duration.ofSeconds(30));
+    WebDriverWait wait = new WebDriverWait(DriverClass.getDriver(), Duration.ofSeconds(30));
 
     @Given("Navigate to Campus")
     public void navigate_to_campus() {
         // Write code here that turns the phrase above into concrete actions
-        BasicDriver.getDriver().manage().window().maximize();
+        DriverClass.getDriver().manage().window().maximize();
 
-        BasicDriver.getDriver().get("https://test.mersys.io");
-        BasicDriver.getDriver().manage().deleteAllCookies();
+        DriverClass.getDriver().get("https://test.mersys.io");
+        DriverClass.getDriver().manage().deleteAllCookies();
 
 
 

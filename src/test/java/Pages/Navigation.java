@@ -1,6 +1,6 @@
 package Pages;
 
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import Utilities.MyMethods;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class Navigation extends MyMethods {
     public Navigation() {
-        PageFactory.initElements(BasicDriver.getDriver(),this);
+        PageFactory.initElements(DriverClass.getDriver(),this);
 
     }
 

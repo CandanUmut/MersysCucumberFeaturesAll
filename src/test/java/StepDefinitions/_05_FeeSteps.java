@@ -2,12 +2,11 @@ package StepDefinitions;
 
 import Pages.DialogContent;
 import Pages.Navigation;
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import io.cucumber.java.it.Data;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Action;
@@ -42,7 +41,7 @@ public class _05_FeeSteps {
         dc.sendKeysMethod(dc.getPriorityInput(),dataList.get(3));
 
 
-        Actions actions = new Actions(BasicDriver.getDriver());
+        Actions actions = new Actions(DriverClass.getDriver());
         Action action =actions.sendKeys(Keys.TAB).build();
         action.perform();
 

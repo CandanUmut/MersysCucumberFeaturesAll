@@ -1,16 +1,9 @@
 package StepDefinitions;
 
-import Utilities.BasicDriver;
+import Utilities.DriverClass;
 import io.cucumber.java.*;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.testng.annotations.BeforeClass;
-
-import java.io.File;
-import java.io.IOException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Hooks {
 
@@ -24,7 +17,7 @@ public class Hooks {
         System.out.println("Scenario has ended");
         if(scenario.isFailed()){
 
-            final byte[] byteImage = ((TakesScreenshot)BasicDriver.getDriver()).getScreenshotAs(OutputType.BYTES);
+            final byte[] byteImage = ((TakesScreenshot) DriverClass.getDriver()).getScreenshotAs(OutputType.BYTES);
             scenario.attach(byteImage,"image/png","screenShot name");
 
 //            Save the screenshot to our computer
@@ -42,7 +35,7 @@ public class Hooks {
         }
 
 
-        BasicDriver.quitDriver();
+        DriverClass.quitDriver();
 
     }
 
